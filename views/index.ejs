@@ -22,31 +22,39 @@
     <main>
         <div class="container stock-container">
             <div class="row">
-                <div class="col crypto-choice">
-                    <a href="">
-                        <div class="crypto">
-                            <img src="" alt="">
-                            <p>BTC</p>
+                <div class="col crypto-choice-container">
+                    <div class="currencyType">
+                        <div id="eurCurrency" class="currencyCheck checked" data-currency="EUR">
+                            EUR
                         </div>
-                    </a>
-                    <a href="">
-                        <div class="crypto">
-                            <img src="" alt="">
-                            <p>BTC</p>
+                        <div id="usdCurrency" class="currencyCheck unchecked" data-currency="USD">
+                            USD
                         </div>
-                    </a>
-                    <a href="">
-                        <div class="crypto">
-                            <img src="" alt="">
-                            <p>BTC</p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="crypto">
-                            <img src="" alt="">
-                            <p>BTC</p>
-                        </div>
-                    </a>
+                    </div>
+                    <div class="crypto-choice">
+                        <a href="/getCoin/BTC">
+                            <div class="crypto">
+                                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=040" alt="">
+                                <p>Bitcoin (BTC)</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="crypto-choice">
+                        <a href="/getCoin/ETH">
+                            <div class="crypto">
+                                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=040" alt="">
+                                <p>Etherum (ETH)</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="crypto-choice">
+                        <a href="/getCoin/SOL">
+                            <div class="crypto">
+                                <img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=040" alt="">
+                                <p>Solana (SOL)</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="col crypto-information">
                     <p>Price:</p>
@@ -71,6 +79,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="src/app.js"></script>
+    <script src="src/server.js"></script>
+    <script src="src/browser.js"></script>
 </body>
 </html>

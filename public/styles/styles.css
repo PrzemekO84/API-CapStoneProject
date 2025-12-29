@@ -22,6 +22,8 @@ header h2{
     margin-left: 10px;
 }
 
+/* MAIN */
+
 main{
     flex: 1;
     display: flex;
@@ -32,8 +34,65 @@ main{
 }
 
 .stock-container{
-    border: 2px solid purple;
+    border: 5px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
 }
+
+.crypto-choice-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 30%;
+    border-right: 2px solid white;
+}
+
+.crypto-choice-container a{
+    text-decoration: none;
+    color: white;
+}
+
+.currencyType{
+    display: flex;
+    gap: 5px;
+}
+
+.currencyCheck{
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checked{
+    color: black;
+    background-color: white;
+    transition: background-color, color, 0.5s ease-in-out;
+}
+
+.checked:active{
+
+}
+
+.crypto-choice{
+    width: fit-content;
+}
+
+.crypto{
+    display: flex;
+    align-content: center;
+    gap: 5px;
+}
+
+
+img{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* MAIN */
 
 footer{
     padding: 10px;
