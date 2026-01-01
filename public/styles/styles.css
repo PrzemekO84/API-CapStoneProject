@@ -30,7 +30,6 @@ main{
     height: 100vh;
     justify-content: center;
     align-items: center;
-    border: 2px solid white
 }
 
 .stock-container{
@@ -88,6 +87,10 @@ main{
 img{
     width: 20px;
     height: 20px;
+}
+
+.crypto-information h2{
+    margin-bottom: 20px;
 }
 
 

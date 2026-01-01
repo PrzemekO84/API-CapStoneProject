@@ -1,5 +1,5 @@
 import express from "express";
-import { getCoinBuyersSellers } from './public/src/server.js'
+import { getCoinBuyersSellers, getCoinCurrentPrice } from './public/src/server.js'
 
 const app = express();
 const port = 3000;
@@ -19,9 +19,18 @@ app.get("/getCoin/:coin", async (req, res) => {
     const coin = req.params.coin;
     const currency = req.query.currency;
 
-    console.log("XD " + currency);
+    const buyersSellers = await getCoinBuyersSellers(coin, currency);
+    const currentPrice = await getCoinCurrentPrice(coin, currency);
 
-    getCoinBuyersSellers(coin, currency);
+    res.render("index.ejs", {
+        coin,
+        currency,
+        market: {
+            bestBid: buyersSellers.bestBid,
+            bestAsk: buyersSellers.bestAsk,
+            lastTradePrice: currentPrice.lastTradePrice
+        }
+    });
 
 });
 

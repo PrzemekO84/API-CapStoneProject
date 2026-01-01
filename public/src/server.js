@@ -9,15 +9,16 @@ export async function getCoinBuyersSellers(coin , currency){
         const response = await axios.get(`${baseURL}/l2/${coin}-${currency}`);
         const data = response.data;
 
-        const currentBuyingPrice = data.bids[0].px;
-        const currentBuyingQuantity = data.bids[0].qty;
-        const currentAsksPrice = data.asks[0].px;
-        const currentAsksQuantity = data.asks[0].qty;
-
-        const response1 = `Someone is willing to buy ${currentBuyingQuantity} ${coin} at $${currentBuyingPrice} (This is currently the highest bid (best buy price).)`
-        const response2 = `Someone wants to sell ${currentAsksQuantity} ${coin} at $${currentAsksPrice} This is the lowest ask (best sell price).)`
-        console.log(response1);
-        console.log(response2);
+        return {
+            bestBid: {
+                price: data.bids[0].px,
+                quantity: data.bids[0].qty
+            },
+            bestAsk: {
+                price: data.asks[0].px,
+                quantity: data.asks[0].qty
+            }
+        };
 
     }
     catch (error){
@@ -25,16 +26,21 @@ export async function getCoinBuyersSellers(coin , currency){
     }
 }
 
-// function coinNameFun(coin){
+export async function getCoinCurrentPrice(coin, currency){
 
-//     let coinName;
+    try{
 
-//     switch(coin){
-//         case "BTC-USD":
-//         coinName = "Bitcoin";
-//         break;
-//         case "ETH-USD"
-//     }
-// }
+        const response = await axios.get(`${baseURL}/tickers/${coin}-${currency}`);
+        const data = response.data;
+
+        return {
+            lastTradePrice: data.last_trade_price
+        };
+
+    }
+    catch (error){
+        console.log(error);
+    }
+}
 
 
